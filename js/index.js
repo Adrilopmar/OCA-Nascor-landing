@@ -32,11 +32,11 @@ const handleForm = (e) => {
     document.getElementById("bookingDateErr").classList.remove("hidden");
     err++;
   }
-  if (err === 0) sendMail();
+  if (err === 0) sendMail(params);
 };
 
 // calling EmailJS to send email 
-const sendMail = () => {
+const sendMail = (params) => {
   try {
     emailjs.send("service_mpdryvr", "template_jpnj3rk", params);
     document.getElementById("succesNotification").classList.remove("hidden");
