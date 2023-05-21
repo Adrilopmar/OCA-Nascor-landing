@@ -30,40 +30,61 @@
               con nosotros. ¡Reserva tu cita con nuestro equipo!
             </p>
           </div>
-          <form class="bg-[--light-bg] rounded-3xl px-10 py-16 mt-12 m-auto xl:mx-0 xl:w-2/4">
-            <div class="mb-6">
-              <p class="text-xl font-bold main-orange mb-3">RESERVA CITA PARA TU PRUEBA</p>
-              <input
+          <form id="form" class="bg-[--light-bg] rounded-3xl px-10 py-16 mt-12 m-auto xl:mx-0 xl:w-2/4">
+            <div id="succesNotification" class="hidden">
+              <div class="success-checkmark">
+                <div class="check-icon">
+                  <span class="icon-line line-tip"></span>
+                  <span class="icon-line line-long"></span>
+                  <div class="icon-circle"></div>
+                  <div class="icon-fix"></div>
+                </div>
+              </div>
+              <p class="text-xl text-center font-bold main-orange mb-3">HEMOS RECIBIDO TU RESERVA!</p>
+              <p class="text-center">Te hemos enviado un email con tu reserva para que no lo pierdas. 👍</p>
+            </div>
+            <div id="formContent">
+              <div class="mb-6">
+                <h4 class="text-xl font-bold main-orange mb-3">RESERVA CITA PARA TU PRUEBA</h4>
+                <input
                 class="border rounded-3xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="username"
+                id="name"
                 type="text"
                 placeholder="Nombre"
-              />
+                onchange="handleName()"
+                />
+                <p id="nameErr" class="text-red-500 hidden">Introduzca un nombre.</p>
+                <p id="shortNameErr" class="text-red-500 hidden">El nombre tiene que contener mínimo 3 letras.</p>
             </div>
             <div class="mb-6">
               <input
-                class="appearance-none border rounded-3xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="email"
-                type="email"
-                placeholder="Mail"
+              class="appearance-none border rounded-3xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="email"
+              type="email"
+              placeholder="Mail"
+              onchange="handleMail()"
               />
+              <p id="emailErr" class="text-red-500 hidden">Introduzca un email válido</p>
             </div>
             <div class="mb-10">
               <input
-                class="appearance-none border rounded-3xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="date"
-                type="date"
-                placeholder="Fecha"
+              class="appearance-none border rounded-3xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="bookingDate"
+              type="date"
+              placeholder="Fecha"
+              onchange="handleDate()"
               />
+              <p id="bookingDateErr" class="text-red-500 hidden">Selecciona una fecha.</p>
             </div>
             <div class="flex justify-end">
               <button
-                class="bg-[--main-orange] hover:opacity-80 text-white font-bold py-2 px-9 rounded-3xl focus:outline-none focus:shadow-outline"
-                type="button"
+              class="bg-[--main-orange] hover:opacity-80 text-white font-bold py-2 px-9 rounded-3xl focus:outline-none focus:shadow-outline"
+              type="submit"
               >
-                Enviar
-              </button>
-            </div>
+              Enviar
+            </button>
+          </div>
+        </div>
           </form>
         </article>
       </section>
@@ -164,7 +185,16 @@
     <!-- scripts -->
     <script src="js/index.js"></script>
     <!-- tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>  
+    <script src="https://cdn.tailwindcss.com"></script>
+      <!-- Email JS   -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("6_xMTt137RP9Vr41R");
+   })();
+</script>
   </body>
 </html>
  
