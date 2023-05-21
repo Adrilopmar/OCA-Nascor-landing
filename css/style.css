@@ -56,10 +56,17 @@ li{
 }
  ul li::before {
   content: "\2022";
-  color: #FF6900;
+  color: var(--main-orange);
   font-size: x-large;
   font-weight: bold; /* If you want it to be bold */
   display: inline-block; /* Needed to add space between the bullet and the text */
   width: 1em; /* Also needed for space (tweak if needed) */
   margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+/* ----------------------------  map section  */
+.map-info{
+  background-color: #ffffff;
+  padding: 1.5em;
+  border-radius: 80px;
+  width: 17em;
 }
