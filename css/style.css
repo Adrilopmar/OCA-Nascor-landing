@@ -1,26 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
 /* ----------------------------------  General styles */
-:root{
-  --main-orange:#FF6900;
-  --light-bg:#f9f3ee;
+:root {
+  --main-orange: #ff6900;
+  --light-bg: #f9f3ee;
 }
 body {
-  font-family:Montserrat ;
+  font-family: Montserrat;
 }
-.main-orange{
+.main-orange {
   color: var(--main-orange);
 }
-.standard-line-height{
+.standard-line-height {
   line-height: 1.3;
 }
-article{
+article {
   margin: 8em 1em;
 }
 /* ----------------------------------  Welcome & form section styles */
-header{
-    position: relative;
-    min-height: 75em;
-    padding-bottom: 7em;
+header {
+  position: relative;
+  min-height: 75em;
+  padding-bottom: 7em;
 }
 .welcome-section {
   position: absolute;
@@ -42,24 +42,24 @@ header{
   height: 100%;
   transform-origin: top left;
 }
-.welcome-section > *{
+.welcome-section > * {
   transform: skewY(6deg);
   transform-origin: left;
 }
-form{
+form {
   max-width: 500px;
 }
- /* ----------------------------  main section styles */
- main{
-  margin:auto 2em ;
- }
- ul{
+/* ----------------------------  main section styles */
+main {
+  margin: auto 2em;
+}
+ul {
   list-style: none;
- }
-li{
+}
+li {
   margin: 1em 0;
 }
- ul li::before {
+ul li::before {
   content: "\2022";
   color: var(--main-orange);
   font-size: x-large;
@@ -69,31 +69,31 @@ li{
   margin-left: -1em; /* Also needed for space (tweak if needed) */
 }
 /* ----------------------------  map section  */
-.map-info{
+.map-info {
   background-color: #ffffff;
   padding: 1.5em;
   border-radius: 80px;
   width: 17em;
 }
 /*  */
-footer{
-  background-color: #5D5C5C;
+footer {
+  background-color: #5d5c5c;
   padding: 2em;
 }
-.logo-social{
+.logo-social {
   height: 35px;
 }
 /* ----------------   mediaqueries responsiveness 
  breakpoints sm:640px, md:768px, lg:1024px, xl:1280px, 2xl:1536px */
- @media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   /* ---------------- header section */
-  header{
+  header {
     min-height: 65em;
   }
 }
 @media only screen and (min-width: 1024px) {
   /* ---------------- main section */
-  .title-list::before{
+  .title-list::before {
     content: "";
     width: 90px;
     height: 7px;
@@ -101,13 +101,12 @@ footer{
     margin-bottom: 14px;
     background-color: var(--main-orange);
     display: inline-block;
-
   }
 }
 
- @media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1280px) {
   /* ---------------- header section */
-  header{
+  header {
     padding-bottom: 0;
     min-height: 65em;
   }
@@ -130,152 +129,153 @@ footer{
   width: 80px;
   height: 115px;
   margin: 0 auto;
-  
+
   .check-icon {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    border-radius: 50%;
+    box-sizing: content-box;
+    border: 4px solid #4caf50;
+
+    &::before {
+      top: 3px;
+      left: -2px;
+      width: 30px;
+      transform-origin: 100% 50%;
+      border-radius: 100px 0 0 100px;
+    }
+
+    &::after {
+      top: 0;
+      left: 30px;
+      width: 60px;
+      transform-origin: 0 50%;
+      border-radius: 0 100px 100px 0;
+      animation: rotate-circle 4.25s ease-in;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      height: 100px;
+      position: absolute;
+      background: var(--light-bg);
+      transform: rotate(-45deg);
+    }
+
+    .icon-line {
+      height: 5px;
+      background-color: #4caf50;
+      display: block;
+      border-radius: 2px;
+      position: absolute;
+      z-index: 10;
+
+      &.line-tip {
+        top: 46px;
+        left: 14px;
+        width: 25px;
+        transform: rotate(45deg);
+        animation: icon-line-tip 0.75s;
+      }
+
+      &.line-long {
+        top: 38px;
+        right: 8px;
+        width: 47px;
+        transform: rotate(-45deg);
+        animation: icon-line-long 0.75s;
+      }
+    }
+
+    .icon-circle {
+      top: -4px;
+      left: -4px;
+      z-index: 10;
       width: 80px;
       height: 80px;
-      position: relative;
       border-radius: 50%;
+      position: absolute;
       box-sizing: content-box;
-      border: 4px solid #4CAF50;
-      
-      &::before {
-          top: 3px;
-          left: -2px;
-          width: 30px;
-          transform-origin: 100% 50%;
-          border-radius: 100px 0 0 100px;
-      }
-      
-      &::after {
-          top: 0;
-          left: 30px;
-          width: 60px;
-          transform-origin: 0 50%;
-          border-radius: 0 100px 100px 0;
-          animation: rotate-circle 4.25s ease-in;
-      }
-      
-      &::before, &::after {
-          content: '';
-          height: 100px;
-          position: absolute;
-          background: var(--light-bg);
-          transform: rotate(-45deg);
-      }
-      
-      .icon-line {
-          height: 5px;
-          background-color: #4CAF50;
-          display: block;
-          border-radius: 2px;
-          position: absolute;
-          z-index: 10;
-          
-          &.line-tip {
-              top: 46px;
-              left: 14px;
-              width: 25px;
-              transform: rotate(45deg);
-              animation: icon-line-tip 0.75s;
-          }
-          
-          &.line-long {
-              top: 38px;
-              right: 8px;
-              width: 47px;
-              transform: rotate(-45deg);
-              animation: icon-line-long 0.75s;
-          }
-      }
-      
-      .icon-circle {
-          top: -4px;
-          left: -4px;
-          z-index: 10;
-          width: 80px;
-          height: 80px;
-          border-radius: 50%;
-          position: absolute;
-          box-sizing: content-box;
-          border: 4px solid rgba(76, 175, 80, .5);
-      }
-      
-      .icon-fix {
-          top: 8px;
-          width: 5px;
-          left: 26px;
-          z-index: 1;
-          height: 85px;
-          position: absolute;
-          transform: rotate(-45deg);
-          background-color: var(--light-bg);
-      }
+      border: 4px solid rgba(76, 175, 80, 0.5);
+    }
+
+    .icon-fix {
+      top: 8px;
+      width: 5px;
+      left: 26px;
+      z-index: 1;
+      height: 85px;
+      position: absolute;
+      transform: rotate(-45deg);
+      background-color: var(--light-bg);
+    }
   }
 }
 
 @keyframes rotate-circle {
   0% {
-      transform: rotate(-45deg);
+    transform: rotate(-45deg);
   }
   5% {
-      transform: rotate(-45deg);
+    transform: rotate(-45deg);
   }
   12% {
-      transform: rotate(-405deg);
+    transform: rotate(-405deg);
   }
   100% {
-      transform: rotate(-405deg);
+    transform: rotate(-405deg);
   }
 }
 
 @keyframes icon-line-tip {
   0% {
-      width: 0;
-      left: 1px;
-      top: 19px;
+    width: 0;
+    left: 1px;
+    top: 19px;
   }
   54% {
-      width: 0;
-      left: 1px;
-      top: 19px;
+    width: 0;
+    left: 1px;
+    top: 19px;
   }
   70% {
-      width: 50px;
-      left: -8px;
-      top: 37px;
+    width: 50px;
+    left: -8px;
+    top: 37px;
   }
   84% {
-      width: 17px;
-      left: 21px;
-      top: 48px;
+    width: 17px;
+    left: 21px;
+    top: 48px;
   }
   100% {
-      width: 25px;
-      left: 14px;
-      top: 45px;
+    width: 25px;
+    left: 14px;
+    top: 45px;
   }
 }
 
 @keyframes icon-line-long {
   0% {
-      width: 0;
-      right: 46px;
-      top: 54px;
+    width: 0;
+    right: 46px;
+    top: 54px;
   }
   65% {
-      width: 0;
-      right: 46px;
-      top: 54px;
+    width: 0;
+    right: 46px;
+    top: 54px;
   }
   84% {
-      width: 55px;
-      right: 0px;
-      top: 35px;
+    width: 55px;
+    right: 0px;
+    top: 35px;
   }
   100% {
-      width: 47px;
-      right: 8px;
-      top: 38px;
+    width: 47px;
+    right: 8px;
+    top: 38px;
   }
 }
