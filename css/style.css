@@ -10,15 +10,13 @@
   line-height: 1.1;
 }
 article{
-  margin: 9em 1em;
+  margin: 8em 1em;
 }
 /* ----------------------------------  Welcome & form section styles */
 header{
     position: relative;
-    height: 90vh;
-    min-height: 900px;
-    width: 100%;
-    margin-bottom: 7em;
+    min-height: 75em;
+    padding-bottom: 7em;
 }
 .welcome-section {
   position: absolute;
