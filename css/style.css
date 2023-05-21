@@ -7,11 +7,12 @@
 body {
   font-family: Montserrat;
 }
+
 .main-orange {
   color: var(--main-orange);
 }
 .standard-line-height {
-  line-height: 1.3;
+  line-height: 1.2 !important;
 }
 article {
   margin: 8em 1em;
