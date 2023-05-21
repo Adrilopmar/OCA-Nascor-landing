@@ -72,6 +72,8 @@
               id="bookingDate"
               type="date"
               placeholder="Fecha"
+              onfocus="(this.type='date')"
+              onblur="(this.type='text')"
               onchange="handleDate()"
               />
               <p id="bookingDateErr" class="text-red-500 hidden">Selecciona una fecha.</p>
