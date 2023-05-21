@@ -70,3 +70,11 @@ li{
   border-radius: 80px;
   width: 17em;
 }
+/*  */
+footer{
+  background-color: #5D5C5C;
+  padding: 2em;
+}
+.logo-social{
+  height: 35px;
+}
