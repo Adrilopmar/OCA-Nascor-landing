@@ -6,10 +6,8 @@ const handleName = () => {
   document.getElementById("nameErr").classList.add("hidden");
   document.getElementById("shortNameErr").classList.add("hidden");
 };
-const handleMail = () =>
-  document.getElementById("emailErr").classList.add("hidden");
-const handleDate = () =>
-  document.getElementById("bookingDateErr").classList.add("hidden");
+const handleMail = () => document.getElementById("emailErr").classList.add("hidden");
+const handleDate = () => document.getElementById("bookingDateErr").classList.add("hidden");
 
 // function on form submit to validate user's data
 const handleForm = (e) => {
